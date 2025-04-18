@@ -14,7 +14,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: production
+    # environment: production
     concurrency:
       group: deploy-${{ inputs.service }}
       cancel-in-progress: true
