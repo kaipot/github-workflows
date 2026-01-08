@@ -15,7 +15,7 @@ jobs:
       ssh-private-keys: ${{ secrets.ssh-private-keys }}
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: Check for proto files
       run: |
@@ -28,9 +28,9 @@ jobs:
         fi
 
     - name: Set up Go
-      uses: actions/setup-go@v5
+      uses: actions/setup-go@v6
       with:
-        go-version: '1.23.x'
+        go-version-file: 'go.mod'
 
     - name: Set up access to private repositories
       if: ${{ env.ssh-private-keys != '' }}
